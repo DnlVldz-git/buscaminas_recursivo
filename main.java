@@ -111,7 +111,7 @@ class arreglo{
         int j = leer.nextInt()-1;
         if(s==1&&bandera==true){//con esto se pone una bandera
             if(array[i][j].celda_ad=='F'){
-                array[i][j].celda_ad=0;
+                array[i][j].celda_ad='#';
                 imprimir_array();
                 bombas--;
                 return 2;
@@ -125,7 +125,7 @@ class arreglo{
             return 2;
         }else if(s==2&&bandera==true){  //esta selección es para poner una interrogación
             if(array[i][j].celda_ad=='?'){
-                array[i][j].celda_ad=0;
+                array[i][j].celda_ad='#';
                 
                 imprimir_array();
                 return 2;
@@ -139,7 +139,7 @@ class arreglo{
             return 2;
         }else if(s==1){
             if(array[i][j].celda_ad=='F'){
-                array[i][j].celda_ad=0;
+                array[i][j].celda_ad='#';
                 imprimir_array();
                 bombas--;
                 return 1;
@@ -153,7 +153,7 @@ class arreglo{
             return 1;
         }else if(s==2){
             if(array[i][j].celda_ad=='?'){
-                array[i][j].celda_ad=0;
+                array[i][j].celda_ad='#';
                 imprimir_array();
                 
                 return 1;
@@ -218,7 +218,7 @@ class arreglo{
         int contador=0;
         for(int i = 0; i<15;i++){           
             for(int j = 0; j < 15; j++){
-                if(array[i][j].celda_ad!=0&&array[i][j].celda_ad!='F'&&array[i][j].celda_ad!='?'){
+                if(array[i][j].celda_ad!='#'&&array[i][j].celda_ad!='F'&&array[i][j].celda_ad!='?'){
                     contador++;
                 }
             }    
@@ -253,7 +253,7 @@ class arreglo{
         for(int i = 0; i<15;i++){           
             for(int j = 0; j < 15; j++){
                 cuadro nuevo = new cuadro();
-                nuevo.celda_ad=0;
+                nuevo.celda_ad='#';
                 nuevo.celda='0';
                 nuevo.visitado=false;
                 array[i][j]=nuevo;
